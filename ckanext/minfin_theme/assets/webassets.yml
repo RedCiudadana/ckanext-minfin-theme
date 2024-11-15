@@ -1,0 +1,14 @@
+# minfin_theme-js:
+#   filter: rjsmin
+#   output: ckanext-minfin_theme/%(version)s-minfin_theme.js
+#   contents:
+#     - js/minfin_theme.js
+#   extra:
+#     preload:
+#       - base/main
+
+# minfin_theme-css:
+#   filter: cssrewrite
+#   output: ckanext-minfin_theme/%(version)s-minfin_theme.css
+#   contents:
+#     - css/minfin_theme.css

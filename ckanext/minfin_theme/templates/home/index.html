@@ -1,0 +1,161 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _("Welcome") }}{% endblock %}
+
+{% block maintag %}{% endblock %}
+{% block toolbar %}{% endblock %}
+
+{% macro render_page_item(url, img, title, description) %}
+  <a class="col-12 col-md-4" href="{{url}}">
+    <img src="{{img}}" alt="">
+    <div class="text text-justify">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+    </div>
+  </a>
+{% endmacro %}
+
+{% block content %}
+<div class="homepage">
+  <div id="content" class="container">
+    {{ self.flash() }}
+  </div>
+  {% block primary_content %}
+  <div role="main">
+    <div class="main hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            {% block search %}
+              {% snippet 'home/snippets/search.html', search_facets=search_facets %}
+            {% endblock %}
+          </div>
+        </div>
+        <div class="floating-banner shadow">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <img src="/img/icons/explora.png" alt="">
+              <div>
+                <a href="/pages/datos-abiertos" target="_blank">
+                  <h2>{{ _('Explora') }}</h2>
+                </a>
+                <p>{{ _('Los diferentes conjuntos de datos en formatos accesibles para la ciudadanía')}}</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <img src="/img/icons/descarga.png" alt="">
+              <div>
+                <a href="{{ h.url_for('dashboard.datasets') }}">
+                  <h2>{{ _('Descarga') }}</h2>
+                </a>
+                <p>{{ _('Los datos y accede a información pública para su análisis')}}</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <img src="/img/icons/reutiliza.png" alt="">
+              <div>
+                <a href="/pages/eventos" target="_blank">
+                  <h2>{{ _('Reutiliza') }}</h2>
+                </a>
+                <p>{{ _('Los datos para crear visualizaciones ya aplicaciones que generen soluciones innovadoras') }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main module-feeds">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {% block featured_group %}
+              {% snippet 'home/snippets/featured_group.html' %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main popular-feeds">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {% snippet 'home/snippets/popular_packages.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="interactua">
+      <div class="container">
+        <div class="row mb-6">
+          <div class="col-12 text-center">
+            <h1 class="title">{{ _('Interactúa') }}</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          {{ render_page_item(
+            "/pages/historias",
+            "/img/interactua/interactua-1.png",
+            "Historias de Usuarios",
+            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+          )}}
+          <div class="separator"></div>
+          {{ render_page_item(
+            "/pages/historias",
+            "/img/interactua/interactua-1.png",
+            "Historias de Usuarios",
+            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+          )}}
+          <div class="separator"></div>
+          {{ render_page_item(
+            "/pages/historias",
+            "/img/interactua/interactua-1.png",
+            "Historias de Usuarios",
+            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+          )}}
+        </div>
+
+        <div class="row">
+          {{ render_page_item(
+            "/pages/historias",
+            "/img/interactua/interactua-1.png",
+            "Historias de Usuarios",
+            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+          )}}
+          <div class="separator"></div>
+          {{ render_page_item(
+            "/pages/historias",
+            "/img/interactua/interactua-1.png",
+            "Historias de Usuarios",
+            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+          )}}
+          <div class="separator"></div>
+          {{ render_page_item(
+            "/pages/historias",
+            "/img/interactua/interactua-1.png",
+            "Historias de Usuarios",
+            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+          )}}
+        </div>
+      </div>
+    </div>
+
+    <div class="portal">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="col-12 col-md-6">
+            <img src="/img/portal.png" alt="">
+            <p>Conoce el uso de los <strong>recursos públicos</strong> a través de <strong>herramientas interactivas amigables</strong> en el Portal de Transparencia Presupuestaria</p>
+            <a class="shadow-sm" href="https://transparenciapresupuestaria.minfin.gob.gt/" target="_blank">Acceder</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% set options = [{'value': True, 'text': _('Yes')}, {'value': False, 'text': _('No')}]%}
+{% block extra_pages_form %}
+    {{ form.select('in_home', id = 'in_home', label = 'En página principal', options=options, selected=data.in_home) }}
+{% endblock extra_pages_form %}
+
+ckanext_pages/base_form.html
+/usr/lib/ckan/default/src/ckanext-minfin-theme/ckanext/minfin_theme/templates/ckanext_pages/base_form.html

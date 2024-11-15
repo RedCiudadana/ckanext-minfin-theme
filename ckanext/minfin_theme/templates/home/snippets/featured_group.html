@@ -1,0 +1,32 @@
+{% set groups = h.get_featured_groups(3) %}
+{% set featured_packages = h.get_featured_packages() %}
+
+<div class="row">
+  <div class="col-12 text-center">
+    <h1>{{ _('Categoria de datos') }}</h1>
+  </div>
+</div>
+
+<div>
+  <div class="row feed_group">
+    {% for group in groups %}
+      {% snippet "home/snippets/group_item.html", item=group, position=False %}
+    {% endfor %}
+  </div>
+</div>
+
+{% if featured_packages %}
+<div class="row">
+  <div class="col-12 text-center">
+    <h1>{{ _('Nuevo conjunto de datos') }}</h1>
+  </div>
+</div>
+
+<div>
+  <div class="row feed_group">
+    {% for package in featured_packages %}
+      {% snippet "home/snippets/group_item.html", item=package, position=False %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

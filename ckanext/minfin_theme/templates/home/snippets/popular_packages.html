@@ -1,0 +1,15 @@
+{% set packages = h.get_popular_packages(3) %}
+
+<div class="row">
+  <div class="col-12 text-center">
+    <h1>{{ _('Conjunto de datos populares') }}</h1>
+  </div>
+</div>
+
+<div>
+  <div class="row feed_group">
+    {% for package in packages %}
+      {% snippet "home/snippets/group_item.html", item=package, position=False %}
+    {% endfor %}
+  </div>
+</div>
