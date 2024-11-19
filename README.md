@@ -119,18 +119,20 @@ If ckanext-minfin-theme should be available on PyPI you can follow these steps t
 Add in a CKAN page
 
 ```
-<a href="/pages/datos-abiertos">Datos Abiertos</a>
-<a href="/dataset">Conjunto de datos</a>
-<a href="/group">Categorías de datos</a>
-<a href="/pages/historias">Historias de Usuarios</a>
-<a href="/pages/videos">Video Tutoriales</a>
-<a href="/pages/eventos">Eventos</a>
-<a href="/pages/estadisticas">Estadísticas</a>
-<a href="/pages/infografias">Infografías</a>
-<a href="/pages/politica-de-publicacion">Política de Publicación</a>
-<a href="/pages/documentos">Política de Publicación</a>
-<a href="/pages/preguntas-frecuentes">Política de Publicación</a>
-<a href="/about">Acerca de</a>
+<ul>
+    <li><a href="/pages/datos-abiertos">Datos Abiertos</a></li>
+    <li><a href="/dataset">Conjunto de datos</a></li>
+    <li><a href="/group">Categorías de datos</a></li>
+    <li><a href="/pages/historias">Historias de Usuarios</a></li>
+    <li><a href="/pages/videos">Video Tutoriales</a></li>
+    <li><a href="/pages/eventos">Eventos</a></li>
+    <li><a href="/pages/estadisticas">Estadísticas</a></li>
+    <li><a href="/pages/infografias">Infografías</a></li>
+    <li><a href="/pages/politica-de-publicacion">Política de Publicación</a></li>
+    <li><a href="/pages/documentos">Política de Publicación</a></li>
+    <li><a href="/pages/preguntas-frecuentes">Política de Publicación</a></li>
+    <li><a href="/about">Acerca de</a></li>
+</ul>
 ```
 
 You need to create the following pages

@@ -49,7 +49,7 @@ def track_request():
             # HOTFIX: END
             conn.execute(sa.text(sql), {
                 "key": key,
-                "url": 'supa',
+                "url": data.get("url"),
                 "type": data.get("type"),
             })
 
