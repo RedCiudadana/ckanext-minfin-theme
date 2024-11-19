@@ -46,7 +46,6 @@ def get_featured_packages():
     
     items = [item.strip() for item in featured_packages.split(' ') if item.strip()]
 
-    print(items)
     packages_data = []
     found = []
     for package_name in items:

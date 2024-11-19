@@ -103,7 +103,7 @@
           {% set org_type = h.default_group_type('organization') %}
           {% set group_type = h.default_group_type('group') %}
 
-          <li><a href="/#categoria-datos">{{ _('Categorías de datos') }}</a></li>
+          <li><a href="{{ h.url_for('group.index') }}">{{ _('Categorías de datos') }}</a></li>
           <li><a target="_blank"
               href="https://transparenciapresupuestaria.minfin.gob.gt/herramientas-interactivas-3/">{{
               _('Visualizaciones') }}</a></li>
