@@ -36,27 +36,21 @@
             <div class="col-12 col-md-4">
               <img src="/img/icons/explora.png" alt="">
               <div>
-                <a href="/pages/datos-abiertos" target="_blank">
-                  <h2>{{ _('Explora') }}</h2>
-                </a>
+                <h2>{{ _('Explora') }}</h2>
                 <p>{{ _('Los diferentes conjuntos de datos en formatos accesibles para la ciudadanía')}}</p>
               </div>
             </div>
             <div class="col-12 col-md-4">
               <img src="/img/icons/descarga.png" alt="">
               <div>
-                <a href="{{ h.url_for('dashboard.datasets') }}">
-                  <h2>{{ _('Descarga') }}</h2>
-                </a>
+                <h2>{{ _('Descarga') }}</h2>
                 <p>{{ _('Los datos y accede a información pública para su análisis')}}</p>
               </div>
             </div>
             <div class="col-12 col-md-4">
               <img src="/img/icons/reutiliza.png" alt="">
               <div>
-                <a href="/pages/eventos" target="_blank">
-                  <h2>{{ _('Reutiliza') }}</h2>
-                </a>
+                <h2>{{ _('Reutiliza') }}</h2>
                 <p>{{ _('Los datos para crear visualizaciones ya aplicaciones que generen soluciones innovadoras') }}</p>
               </div>
             </div>
@@ -65,7 +59,7 @@
       </div>
     </div>
 
-    <div class="main module-feeds">
+    <div class="main module-feeds" id="categoria-datos">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -98,46 +92,46 @@
         <div class="row">
           {{ render_page_item(
             "/pages/historias",
-            "/img/interactua/interactua-1.png",
+            "/img/interactua/interactua-2.png",
             "Historias de Usuarios",
             "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
           )}}
           <div class="separator"></div>
           {{ render_page_item(
-            "/pages/historias",
-            "/img/interactua/interactua-1.png",
-            "Historias de Usuarios",
-            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+            "/pages/videos",
+            "/img/interactua/interactua-3.png",
+            "Video Tutoriales",
+            "Encuentra los recursos visuales que te guiarán paso a paso a utilizar los datos abiertos "
           )}}
           <div class="separator"></div>
           {{ render_page_item(
-            "/pages/historias",
-            "/img/interactua/interactua-1.png",
-            "Historias de Usuarios",
-            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+            "/pages/eventos",
+            "/img/interactua/interactua-4.png",
+            "Eventos",
+            "Matente informado y participa en los diferentes eventos que promueven la paticipación ciudadana en el uso de datos abiertos"
           )}}
         </div>
 
         <div class="row">
           {{ render_page_item(
-            "/pages/historias",
-            "/img/interactua/interactua-1.png",
-            "Historias de Usuarios",
-            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+            "/pages/estadisticas",
+            "/img/interactua/interactua-5.png",
+            "Estadísticas",
+            "Consulta la analítica del portal como los conjuntos de datos más descargados, el número de visitas y otros aspectos relevantes"
           )}}
           <div class="separator"></div>
           {{ render_page_item(
-            "/pages/historias",
-            "/img/interactua/interactua-1.png",
-            "Historias de Usuarios",
-            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+            "/pages/infografias",
+            "/img/interactua/interactua-6.png",
+            "Infografías",
+            "Conoce de manera amigable y accesible temas claves relacionados con los datos abiertos"
           )}}
           <div class="separator"></div>
           {{ render_page_item(
-            "/pages/historias",
+            "/pages/politica-de-publicacion",
             "/img/interactua/interactua-1.png",
-            "Historias de Usuarios",
-            "Conoce cómo diferentes personas o grupos han utilizado los datos abiertos para resolver problemas o impulsar proyectos"
+            "Política de Publicación",
+            "Infórmate sobre el alcance y los formatos de los conjuntos de datos, así como el propósito de su publicación y otros aspectos"
           )}}
         </div>
       </div>

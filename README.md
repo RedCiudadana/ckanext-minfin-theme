@@ -115,6 +115,38 @@ If ckanext-minfin-theme should be available on PyPI you can follow these steps t
        git tag 0.0.1
        git push --tags
 
+## Sitemap example
+Add in a CKAN page
+
+```
+<a href="/pages/datos-abiertos">Datos Abiertos</a>
+<a href="/dataset">Conjunto de datos</a>
+<a href="/group">Categorías de datos</a>
+<a href="/pages/historias">Historias de Usuarios</a>
+<a href="/pages/videos">Video Tutoriales</a>
+<a href="/pages/eventos">Eventos</a>
+<a href="/pages/estadisticas">Estadísticas</a>
+<a href="/pages/infografias">Infografías</a>
+<a href="/pages/politica-de-publicacion">Política de Publicación</a>
+<a href="/pages/documentos">Política de Publicación</a>
+<a href="/pages/preguntas-frecuentes">Política de Publicación</a>
+<a href="/about">Acerca de</a>
+```
+
+You need to create the following pages
+
+- /pages/datos-abiertos
+- /pages/historias
+- /pages/videos
+- /pages/eventos
+- /pages/estadisticas
+- /pages/infografias
+- /pages/politica-de-publicacion
+- /pages/documentos
+- /pages/preguntas-frecuentes
+- /pages/mapa-sitio
+- /pages/preguntas
+
 ## License
 
 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
