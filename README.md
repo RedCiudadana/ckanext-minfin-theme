@@ -147,6 +147,12 @@ You need to create the following pages
 - /pages/mapa-sitio
 - /pages/preguntas
 
+## Configure featured packages in home
+Add the featured package to the parameter
+```
+ckan.featured_packages = package_1 package_2
+```
+
 ## License
 
 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
