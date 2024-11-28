@@ -1,22 +1,14 @@
-[![Tests](https://github.com//ckanext-minfin-theme/workflows/Tests/badge.svg?branch=main)](https://github.com//ckanext-minfin-theme/actions)
+[![Tests](https://github.com/RedCiudadanana/ckanext-minfin-theme/workflows/Tests/badge.svg?branch=main)](https://github.com/RedCiudadanana/ckanext-minfin-theme/actions)
 
 # ckanext-minfin-theme
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
-
-
 ## Requirements
-
-**TODO:** For example, you might want to mention here which versions of CKAN this
-extension works with.
-
-If your extension works across different versions you can add the following table:
 
 Compatibility with core CKAN versions:
 
 | CKAN version    | Compatible?   |
 | --------------- | ------------- |
-| 2.11             | not tested    |
+| 2.11             | yes    |
 
 Suggested values:
 
@@ -28,53 +20,48 @@ Suggested values:
 
 ## Installation
 
-**TODO:** Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
-
 To install ckanext-minfin-theme:
 
 1. Activate your CKAN virtual environment, for example:
+    . /usr/lib/ckan/default/bin/activate
 
-     . /usr/lib/ckan/default/bin/activate
-
-2. Clone the source and install it on the virtualenv
-
-    git clone https://github.com//ckanext-minfin-theme.git
+2. Clone the source in `src` and install it on the virtualenv:
+    git clone https://github.com/RedCiudadanana/ckanext-minfin-theme.git
     cd ckanext-minfin-theme
-    pip install -e .
-	pip install -r requirements.txt
+    python setup.py develop
+    pip install -r requirements.txt
 
 3. Add `minfin-theme` to the `ckan.plugins` setting in your CKAN
-   config file (by default the config file is located at
-   `/etc/ckan/default/ckan.ini`).
+    config file (by default the config file is located at `/etc/ckan/default/ckan.ini`).
 
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
-
-     sudo service apache2 reload
-
+4. Restart CKAN. For example if you've deployed CKAN with Nginx on Ubuntu:
+    sudo service nginx reload
 
 ## Config settings
 
-None at present
+List of package to be listed in the home
 
-**TODO:** Document any optional config settings here. For example:
-
-	# The minimum number of hours to wait before re-checking a resource
-	# (optional, default: 24).
-	ckanext.minfin_theme.some_setting = some_default_value
-
+`ckan.featured_packages = package-1 package-2 package-3`
 
 ## Developer installation
 
-To install ckanext-minfin-theme for development, activate your CKAN virtualenv and
-do:
+To install ckanext-minfin-theme for development:
 
-    git clone https://github.com//ckanext-minfin-theme.git
+1. Activate your CKAN virtual environment, for example:
+    . /usr/lib/ckan/default/bin/activate
+
+2. Clone the source in `src` and install it on the virtualenv:
+    git clone https://github.com/RedCiudadanana/ckanext-minfin-theme.git
     cd ckanext-minfin-theme
     python setup.py develop
     pip install -r dev-requirements.txt
 
+## Configure featured packages in home
+
+Add the featured package to the parameter
+```
+ckan.featured_packages = package_1 package_2
+```
 
 ## Tests
 
@@ -82,40 +69,23 @@ To run the tests, do:
 
     pytest --ckan-ini=test.ini
 
+## How to update the plugin
 
-## Releasing a new version of ckanext-minfin-theme
+To update ckanext-minfin-theme for development:
 
-If ckanext-minfin-theme should be available on PyPI you can follow these steps to publish a new version:
+1. Activate your CKAN virtual environment, for example:
+    . /usr/lib/ckan/default/bin/activate
 
-1. Update the version number in the `setup.py` file. See [PEP 440](http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers) for how to choose version numbers.
+2. Clone the source in `src` and update it on the virtualenv:
+    cd ckanext-minfin-theme
+    git pull
+    pip install -r requirements.txt
 
-2. Make sure you have the latest version of necessary packages:
-
-    pip install --upgrade setuptools wheel twine
-
-3. Create a source and binary distributions of the new version:
-
-       python setup.py sdist bdist_wheel && twine check dist/*
-
-   Fix any errors you get.
-
-4. Upload the source distribution to PyPI:
-
-       twine upload dist/*
-
-5. Commit any outstanding changes:
-
-       git commit -a
-       git push
-
-6. Tag the new release of the project on GitHub with the version number from
-   the `setup.py` file. For example if the version number in `setup.py` is
-   0.0.1 then do:
-
-       git tag 0.0.1
-       git push --tags
+3. Restart uwsgi processes:
+    supervisorctl restart all
 
 ## Sitemap example
+
 Add in a CKAN page
 
 ```
@@ -129,8 +99,10 @@ Add in a CKAN page
     <li><a href="/pages/estadisticas">Estadísticas</a></li>
     <li><a href="/pages/infografias">Infografías</a></li>
     <li><a href="/pages/politica-de-publicacion">Política de Publicación</a></li>
-    <li><a href="/pages/documentos">Política de Publicación</a></li>
-    <li><a href="/pages/preguntas-frecuentes">Política de Publicación</a></li>
+    <li><a href="/pages/documentos">Documentación</a></li>
+    <li><a href="/pages/preguntas-frecuentes">Preguntas frecuentes</a></li>
+    <li><a href="/pages/reporta-un-problema">Reporta un problema</a></li>
+    <li><a href="/pages/evalua">Evalúa</a></li>
     <li><a href="/about">Acerca de</a></li>
 </ul>
 ```
@@ -148,12 +120,8 @@ You need to create the following pages
 - /pages/preguntas-frecuentes
 - /pages/mapa-sitio
 - /pages/preguntas
-
-## Configure featured packages in home
-Add the featured package to the parameter
-```
-ckan.featured_packages = package_1 package_2
-```
+- /pages/reporta-un-problema
+- /pages/evalua
 
 ## License
 

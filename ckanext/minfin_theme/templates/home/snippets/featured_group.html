@@ -13,6 +13,14 @@
       {% snippet "home/snippets/group_item.html", item=group, position=False %}
     {% endfor %}
   </div>
+  <div class="col-12 text-center mb-[120px]">
+    <a
+      href="{% url_for 'dataset.search', sort='views_recent+desc'%}"
+      class="dark-link feed_group_link"
+    >
+      {{ _('Ver todos los conjuntos de datos') }}
+    </a>
+  </div>
 </div>
 
 {% if featured_packages %}
