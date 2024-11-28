@@ -123,6 +123,12 @@ You need to create the following pages
 - /pages/reporta-un-problema
 - /pages/evalua
 
+## Other plugins
+
+For CKAN pages enable CKEDITOR and allow_html:
+`ckanext.pages.editor = ckeditor`
+`ckanext.pages.allow_html = True`
+
 ## License
 
 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
