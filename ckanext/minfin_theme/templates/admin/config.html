@@ -1,0 +1,26 @@
+{% ckan_extends %}
+
+{% import 'macros/form.html' as form %}
+
+{% block admin_form %}
+
+  {{ super() }}
+
+  <h3>{{ _('Custom configuration options') }}</h3>
+
+  {{ form.input(
+    'ckanext.minfin_theme.feedback_embed',
+    id='ckanext.minfin_theme.feedback_embed',
+    label=_('URL del formulario embed para feedback'),
+    value=data['ckanext.minfin_theme.feedback_embed'],
+    error=errors['ckanext.minfin_theme.feedback_embed'])
+  }}
+
+{% endblock %}
+
+
+{% block admin_form_help %}
+
+  {{ super() }}
+
+{% endblock %}

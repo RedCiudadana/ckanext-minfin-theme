@@ -5,6 +5,8 @@
 {% block maintag %}{% endblock %}
 {% block toolbar %}{% endblock %}
 
+{% set theme_paremeters = h.get_theme_parameters() %}
+
 {% macro render_page_item(url, img, title, description) %}
   <a class="col-12 col-md-4" href="{{url}}">
     <img src="{{img}}" alt="">
@@ -121,6 +123,11 @@
             <p>Conoce el uso de los <strong>recursos públicos</strong> a través de <strong>herramientas interactivas amigables</strong> en el Portal de Transparencia Presupuestaria</p>
             <a class="shadow-sm" href="https://transparenciapresupuestaria.minfin.gob.gt/" target="_blank">Acceder</a>
           </div>
+          {% if theme_paremeters['minfin_theme_feedback_embed']%}
+            <div class="col-md-6">
+              <embed src="{{theme_paremeters['minfin_theme_feedback_embed']}}" type="text/html">
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

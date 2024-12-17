@@ -5,12 +5,11 @@ import hashlib
 from typing import cast
 
 from urllib.parse import unquote
-from flask import Response
 
 import sqlalchemy as sa
 
-from ckan.model.meta import engine
 from ckan.common import request, config
+from ckan.types import Response
 
 
 def track_request():
@@ -54,3 +53,9 @@ def track_request():
             })
 
         return '', 200
+
+
+def add_csp(response: Response) -> Response:
+    response.headers['X-Frame-Options'] = "ALLOW-FROM https://transparenciapresupuestaria.minfin.gob.gt;"
+    response.headers['Content-Security-Policy'] = "frame-src 'self' https://transparenciapresupuestaria.minfin.gob.gt;"
+    return response

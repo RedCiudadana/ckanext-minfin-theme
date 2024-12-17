@@ -1,13 +1,19 @@
 from __future__ import annotations
 
 from ckan.common import config
-import ckan.plugins as plugins
-import ckan.logic as logic
-import ckan.plugins.toolkit as toolkit
+from ckan.types import Schema
 from ckanext.pages.interfaces import IPagesSchema
+import ckan.logic as logic
+import ckan.plugins as plugins
+import ckan.plugins.toolkit as toolkit
 
 
-from .middleware import track_request
+from .middleware import track_request, add_csp
+
+def get_theme_parameters():
+    return {
+        'minfin_theme_feedback_embed': toolkit.config.get('ckanext.minfin_theme.feedback_embed')
+    }
 
 def get_pages_in_home():
     # Define parameters for the action (if any)
@@ -88,9 +94,21 @@ class MinfinThemePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         toolkit.add_public_directory(config, "public")
         toolkit.add_resource("assets", "minfin_theme")
 
+    def update_config_schema(self, schema: Schema):
+        ignore_missing = toolkit.get_validator('ignore_missing')
+        unicode_safe = toolkit.get_validator('unicode_safe')
+
+        schema.update({
+            # This is a custom configuration option
+            u'ckanext.minfin_theme.feedback_embed': [ignore_missing, unicode_safe],
+        })
+
+        return schema
+
     # IMiddleware
     def make_middleware(self, app: CKANApp, config: CKANConfig) -> Any:
         app.before_request(track_request)
+        app.after_request(add_csp)
         return app
     
     #IPagesSchema
@@ -119,4 +137,5 @@ class MinfinThemePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
             'get_popular_packages': get_popular_packages,
             'get_featured_packages': get_featured_packages,
             'get_extra_value': get_extra_value,
+            'get_theme_parameters': get_theme_parameters,
         }
