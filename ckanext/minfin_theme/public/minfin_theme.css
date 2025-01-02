@@ -896,6 +896,25 @@ a.feed_group_link:hover {
   font-size: 1.2rem;
 }
 
+.portal embed {
+  width: 100%;
+  height: 824px;
+  border-radius: 8px;
+  margin-top: 2rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portal embed::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .portal embed {
+    margin: 0;
+  }
+}
+
 .main {
   position: relative;
 }
