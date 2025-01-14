@@ -5,7 +5,7 @@
 {% set image = h.get_extra_value(item.extras, 'image') %}
 {% set image_url = h.url_for_static(image) if image else None %}
 
-<a href="{{ url }}" class="col-12 col-md-5">
+<a href="{{ url }}" class="col-12 col-md-4">
   <div class="home-group-item shadow d-flex">
     <div class="img">
       <img src="{{ item.image_display_url or image or h.url_for_static('/img/icons/placeholder-item.png') }}" alt="{{ item.name }}" class="media-image img-fluid">

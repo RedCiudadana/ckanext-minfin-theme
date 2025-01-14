@@ -662,8 +662,7 @@ body {
   margin: 15px 0 75px 0;
 }
 
-.feed_group > div:last-child,
-#categoria-datos > div > div > div > div:nth-child(2) > div.row.feed_group.justify-around > div:nth-child(4) {
+.feed_group > div:last-child {
   display: none;
 }
 
