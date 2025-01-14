@@ -9,7 +9,15 @@
 <div>
   <div class="row feed_group" style="gap: 20px;">
     {% for package in packages %}
-      {% snippet "home/snippets/group_item.html", item=package, position=False %}
+      {% snippet "home/snippets/package_item.html", item=package, position=False %}
     {% endfor %}
+  </div>
+  <div class="col-12 text-center" style="margin-bottom: 50px;">
+    <a
+      href="{% url_for 'dataset.search', sort='views_recent desc'%}"
+      class="dark-link feed_group_link"
+    >
+      {{ _('Ver todos los conjuntos de datos') }}
+    </a>
   </div>
 </div>
