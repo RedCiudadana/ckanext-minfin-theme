@@ -104,11 +104,12 @@
           {% set group_type = h.default_group_type('group') %}
 
           <li><a href="{% url_for 'home.index' %}">{{ _('Inicio') }}</a></li>
-          <li><a href="{% url_for 'dataset.search', sort='views_recent desc'%}">{{ _('Conjunto de datos') }}</a></li>
+          <li><a href="{% url_for 'dataset.search', sort='views_recent desc'%}">{{ _('Conjuntos de datos') }}</a></l i>
           <li><a target="_blank"
               href="https://transparenciapresupuestaria.minfin.gob.gt/herramientas-interactivas-3/">{{
               _('Visualizaciones') }}</a></li>
-          <li><a href="/pages/politica-de-publicacion">{{ _('Política de Publicación') }}</a></li>
+          <li><a href="/pages/politica-de-publicacion">{{ _('Política de publicación') }}</a></li>
+          <li><a href="/pages/base-legal">{{ _('Base legal') }}</a></li>
           <li><a href="/pages/que-son-datos-abiertos">{{ _('Acerca de') }}</a></li>
           {% endblock %}
         </ul>

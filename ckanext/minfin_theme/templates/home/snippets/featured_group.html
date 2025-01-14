@@ -1,4 +1,4 @@
-{% set groups = h.get_featured_groups(3) %}
+{% set groups = h.get_featured_groups(4) %}
 {% set featured_packages = h.get_featured_packages() %}
 
 <div class="row">
@@ -8,17 +8,17 @@
 </div>
 
 <div>
-  <div class="row feed_group">
+  <div class="row feed_group justify-center">
     {% for group in groups %}
       {% snippet "home/snippets/group_item.html", item=group, position=False %}
     {% endfor %}
   </div>
   <div class="col-12 text-center mb-[120px]">
     <a
-      href="{% url_for 'dataset.search', sort='views_recent desc'%}"
+      href="{% url_for 'group.index' %}"
       class="dark-link feed_group_link"
     >
-      {{ _('Ver todos los conjuntos de datos') }}
+      {{ _('Ver todos los grupos') }}
     </a>
   </div>
 </div>
@@ -35,6 +35,14 @@
     {% for package in featured_packages %}
       {% snippet "home/snippets/group_item.html", item=package, position=False %}
     {% endfor %}
+  </div>
+  <div class="col-12 text-center mb-[120px]">
+    <a
+      href="{% url_for 'dataset.search', sort='views_recent desc'%}"
+      class="dark-link feed_group_link"
+    >
+      {{ _('Ver todos los conjuntos de datos') }}
+    </a>
   </div>
 </div>
 {% endif %}

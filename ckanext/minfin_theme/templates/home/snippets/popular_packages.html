@@ -7,7 +7,7 @@
 </div>
 
 <div>
-  <div class="row feed_group">
+  <div class="row feed_group" style="gap: 20px;">
     {% for package in packages %}
       {% snippet "home/snippets/group_item.html", item=package, position=False %}
     {% endfor %}

@@ -690,7 +690,7 @@ body {
 
 @media (min-width: 1024px) {
   .feed_group {
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .feed_group .separator {
@@ -706,7 +706,9 @@ body {
   align-items: center;
   gap: 16px;
   padding: 16px 8px;
-  width: 300px;
+  min-width: 250px;
+  width: 100%;
+  max-width: 300px;
   margin: auto auto 20px;
 }
 
