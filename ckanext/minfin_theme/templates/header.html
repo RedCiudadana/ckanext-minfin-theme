@@ -105,9 +105,16 @@
 
           <li><a href="{% url_for 'home.index' %}">{{ _('Inicio') }}</a></li>
           <li><a href="{% url_for 'dataset.search', sort='views_recent desc'%}">{{ _('Conjuntos de datos') }}</a></l i>
-          <li><a target="_blank"
-              href="https://transparenciapresupuestaria.minfin.gob.gt/herramientas-interactivas-3/">{{
-              _('Visualizaciones') }}</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ _('Visualizaciones') }}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" target="_blank" href="https://transparenciapresupuestaria.minfin.gob.gt/herramientas-interactivas-3/">Portal de Transparencia Presupuestaria</a></li>
+              <li><a class="dropdown-item" target="_blank" href="https://portalgl.minfin.gob.gt/">Portal de Gobiernos Locales</a></li>
+              <li><a class="dropdown-item" target="_blank" href="https://www.guatecompras.gt/info/consultaDocumentosEstadisticos.aspx">Portal de Guatecompras</a></li>
+            </ul>
+          </li>
           <li><a href="/pages/politica-de-publicacion">{{ _('Política de publicación') }}</a></li>
           <li><a href="/pages/baselegal">{{ _('Base legal') }}</a></li>
           <li><a href="/pages/que-son-datos-abiertos">{{ _('Acerca de') }}</a></li>

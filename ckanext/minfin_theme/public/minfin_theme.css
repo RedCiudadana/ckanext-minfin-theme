@@ -216,11 +216,13 @@ body {
   width: 25px;
 }
 
+.masthead .main-navbar ul li,
 .masthead .main-navbar ul li a {
   color: #1d1d1bff;
+  background-color: unset !important;
 }
 
-.masthead .main-navbar ul li:hover a,
+.masthead .main-navbar ul li:hover:not(.dropdown) a,
 .masthead .main-navbar ul li:focus a,
 .masthead .main-navbar ul li.active a {
   border-radius: 0.3rem;
