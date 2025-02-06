@@ -6,6 +6,7 @@ from ckanext.pages.interfaces import IPagesSchema
 import ckan.logic as logic
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+from ckan.lib.plugins import DefaultTranslation
 
 
 from .middleware import track_request, add_csp
@@ -81,10 +82,11 @@ def get_extra_value(extras, key):
             return extra.get('value')
     return None
 
-class MinfinThemePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
+class MinfinThemePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IMiddleware, inherit=True)
     plugins.implements(plugins.IDatasetForm)
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.ITemplateHelpers, inherit=True)
     plugins.implements(IPagesSchema)
 
