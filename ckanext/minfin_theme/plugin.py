@@ -9,7 +9,7 @@ import ckan.plugins.toolkit as toolkit
 from ckan.lib.plugins import DefaultTranslation
 
 
-from .middleware import track_request, add_csp
+from .middleware import track_request
 
 def get_theme_parameters():
     return {
@@ -110,7 +110,6 @@ class MinfinThemePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, Def
     # IMiddleware
     def make_middleware(self, app: CKANApp, config: CKANConfig) -> Any:
         app.before_request(track_request)
-        app.after_request(add_csp)
         return app
     
     #IPagesSchema

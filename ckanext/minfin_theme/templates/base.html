@@ -1,5 +1,11 @@
 {% ckan_extends %}
 
+{%- block title -%}
+  {%- block subtitle %}{% endblock -%}
+  {%- if self.subtitle()|trim %} {{ g.template_title_delimiter }} {% endif -%}
+  MINFIN
+{%- endblock -%}
+
 {% block custom_styles %}
   {{ super() }}
   <link rel="stylesheet" href="/minfin_theme.css" />

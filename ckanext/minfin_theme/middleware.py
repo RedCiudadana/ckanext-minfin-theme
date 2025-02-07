@@ -53,9 +53,3 @@ def track_request():
             })
 
         return '', 200
-
-
-def add_csp(response: Response) -> Response:
-    response.headers['X-Frame-Options'] = "ALLOW-FROM https://transparenciapresupuestaria.minfin.gob.gt;"
-    response.headers['Content-Security-Policy'] = "frame-src 'self' https://transparenciapresupuestaria.minfin.gob.gt;"
-    return response
