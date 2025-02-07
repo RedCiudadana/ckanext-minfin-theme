@@ -985,8 +985,18 @@ a.feed_group_link:hover {
   padding: 5.5rem 0;
 }
 
+.cintillo .col-12 {
+  text-align: center;
+}
+
 .cintillo img {
-  max-width: 100%;
+  max-width: min(230px, 100%);
+}
+
+@media (min-width: 768px) {
+  .cintillo img {
+    max-width: min(250px, 100%);
+  }
 }
 
 .cintillo p {
