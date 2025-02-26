@@ -664,7 +664,8 @@ body {
   margin: 15px 0 75px 0;
 }
 
-.feed_group > div:last-child {
+.feed_group > div:last-child,
+.feed_group > div:nth-child(4) {
   display: none;
 }
 
@@ -1003,4 +1004,10 @@ a.feed_group_link:hover {
   margin: 0;
   font-size: 0.6rem;
   font-weight: 500;
+}
+
+
+/* Fix dataview hide and show columns */
+div.dt-button-collection.fixed {
+  transform: unset !important;
 }

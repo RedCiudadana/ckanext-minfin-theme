@@ -1,4 +1,4 @@
-{% set groups = h.get_featured_groups(3) %}
+{% set groups = h.get_featured_groups(4) %}
 {% set featured_packages = h.get_featured_packages() %}
 
 <div class="row">
@@ -33,7 +33,7 @@
 <div>
   <div class="row feed_group">
     {% for package in featured_packages %}
-      {% snippet "home/snippets/group_item.html", item=package, position=False %}
+      {% snippet "home/snippets/package_item.html", item=package, position=False %}
     {% endfor %}
   </div>
   <div class="col-12 text-center mb-[120px]">
